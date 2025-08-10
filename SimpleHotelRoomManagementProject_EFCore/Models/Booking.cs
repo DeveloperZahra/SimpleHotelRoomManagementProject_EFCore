@@ -29,6 +29,10 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
 
         // Number of nights stayed
         [NotMapped]  // This tells EF not to map this property to the database, calculated dynamically
+
+        // Calculates the total number of nights for the booking.
+        /// This property is not stored in the database as it is dynamically calculated
+        /// based on the difference between CheckOutDate and CheckInDate.
         public int Nights
         {
             get
