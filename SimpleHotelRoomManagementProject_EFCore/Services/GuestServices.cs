@@ -33,7 +33,11 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
         }
 
 
-
+        // Get All Guest
+        public void GetAllGuest()
+        {
+            _guestRepository.GetAllGuests();
+        }
 
 
 
