@@ -11,7 +11,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
     // Uses Data Annotations for EF Core mapping.
     public class Room
     {
-        [Key]
+        [Key]// Marks this property as the Primary Key in the database
         public int RoomId { get; set; }
         public int RoomNumber { get; set; }
 
