@@ -15,7 +15,8 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
         public int BookingId { get; set; }  //Uniquely identifies each booking record.
 
         [Required]
-        public int GuestId { get; set; }
+        public int GuestId { get; set; }   /// Foreign key linking to the Guest who made this booking.
+                                           /// This is a required field.
 
         [Required]
         public int RoomId { get; set; }
