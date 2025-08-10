@@ -21,7 +21,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
 
         [Required] // Must be linked to a guest
         [ForeignKey("Guest")]
-        public int GuestId { get; set; }
+        public int GuestId { get; set; } //Foreign key linking this review to the guest who wrote it
 
         [Required] // Review Comment  is mandatory
         [MaxLength(500)] // Limit text length to 500 characters
