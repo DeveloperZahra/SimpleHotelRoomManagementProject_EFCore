@@ -40,6 +40,17 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
         }
 
 
+        // get guest by id 
+        public void GetGuestById(int guestId)
+        {
+            _guestRepository.GetGuestById(guestId);
+        }
+
+
+
+
+
+
 
     }
 
