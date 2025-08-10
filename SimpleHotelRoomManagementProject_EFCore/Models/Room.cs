@@ -13,7 +13,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
     {
         [Key]// Marks this property as the Primary Key in the database
         public int RoomId { get; set; } // RoomId: Primary key for database table
-        public int RoomNumber { get; set; }
+        public int RoomNumber { get; set; } // RoomNumber: Unique room identifier visible to guests/admin
 
         [Required]
         public decimal DailyRate { get; set; }
