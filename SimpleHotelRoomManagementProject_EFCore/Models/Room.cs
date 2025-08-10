@@ -12,7 +12,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
     public class Room
     {
         [Key]// Marks this property as the Primary Key in the database
-        public int RoomId { get; set; }
+        public int RoomId { get; set; } // RoomId: Primary key for database table
         public int RoomNumber { get; set; }
 
         [Required]
