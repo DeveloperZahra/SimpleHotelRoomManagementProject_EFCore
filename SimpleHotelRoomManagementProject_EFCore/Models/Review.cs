@@ -27,7 +27,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
         [MaxLength(500)] // Limit text length to 500 characters
         public string Comment { get; set; } //Required textual feedback from the guest, limited to 500 characters
 
-        [Range(1, 5, ErrorMessage = "Rating must be between 1 and 5.")]
+        [Range(1, 5, ErrorMessage = "Rating must be between 1 and 5.")] //Optional numeric rating from 1 to 5 stars.
         public int? Rating { get; set; } // Optional star rating
 
         [Required] // Review date is mandatory
