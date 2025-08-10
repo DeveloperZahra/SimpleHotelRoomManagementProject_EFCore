@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace SimpleHotelRoomManagementProject_EFCore.Services
 {
-    public  class GuestServices
+    public class GuestServices : IGuestServices
     {
         // Constructor Injection 
         private readonly IGuestRepo _guestRepository;
-        public GuestServices(IGuestRepo guestRepository) 
+        public GuestServices(IGuestRepo guestRepository)
         {
             _guestRepository = guestRepository ?? throw new ArgumentNullException(nameof(guestRepository));
         }
