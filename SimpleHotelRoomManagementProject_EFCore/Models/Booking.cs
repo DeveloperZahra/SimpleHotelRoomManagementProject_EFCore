@@ -19,7 +19,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
                                            /// This is a required field.
 
         [Required]
-        public int RoomId { get; set; }
+        public int RoomId { get; set; } // Foreign key linking to the Room that is booked.
 
         [Required]
         public DateTime CheckInDate { get; set; }
