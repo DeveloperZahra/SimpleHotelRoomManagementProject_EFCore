@@ -22,7 +22,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
         public int RoomId { get; set; } // Foreign key linking to the Room that is booked.
 
         [Required]
-        public DateTime CheckInDate { get; set; }
+        public DateTime CheckInDate { get; set; } // The scheduled date when the guest will check in
 
         [Required]
         public DateTime CheckOutDate { get; set; }
