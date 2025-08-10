@@ -25,7 +25,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
         public DateTime CheckInDate { get; set; } // The scheduled date when the guest will check in
 
         [Required]
-        public DateTime CheckOutDate { get; set; }
+        public DateTime CheckOutDate { get; set; } // The scheduled date when the guest will check out
 
         // Number of nights stayed
         [NotMapped]  // This tells EF not to map this property to the database, calculated dynamically
