@@ -47,6 +47,16 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
         }
 
 
+        // update Phone of guest
+        public void UpdateGuest(int GuestID, string phone)
+        {
+            var ExistGuest = _guestRepository.GetGuestById(GuestID);
+            if (ExistGuest != null)
+
+                ExistGuest.Phone = phone;
+            _guestRepository.UpdateGuest(ExistGuest);
+        }
+
 
 
 
