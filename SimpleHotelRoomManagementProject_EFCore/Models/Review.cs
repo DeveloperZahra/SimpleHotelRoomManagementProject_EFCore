@@ -13,7 +13,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
     public class Review
     {
         [Key] // Primary key
-        public int ReviewId { get; set; }
+        public int ReviewId { get; set; } //Primary key for uniquely identifying each review
 
         [Required] // Must be linked to a booking
         [ForeignKey("Booking")]
