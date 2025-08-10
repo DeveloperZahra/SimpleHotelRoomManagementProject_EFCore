@@ -12,7 +12,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
     public class Booking
     {
         [Key]
-        public int BookingId { get; set; }
+        public int BookingId { get; set; }  //Uniquely identifies each booking record.
 
         [Required]
         public int GuestId { get; set; }
