@@ -16,7 +16,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
         public int RoomNumber { get; set; } // RoomNumber: Unique room identifier visible to guests/admin
 
         [Required]
-        public decimal DailyRate { get; set; }
+        public decimal DailyRate { get; set; } // DailyRate: Required daily rental cost of the room.
 
         public bool IsReserved { get; set; }
 
