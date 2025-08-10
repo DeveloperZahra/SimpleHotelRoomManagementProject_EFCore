@@ -12,7 +12,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
     public class Guest
     {
         [Key]
-        public int GuestId { get; set; }
+        public int GuestId { get; set; } //Primary key for identifying each guest.
 
         [Required]
         public string GuestName { get; set; }
