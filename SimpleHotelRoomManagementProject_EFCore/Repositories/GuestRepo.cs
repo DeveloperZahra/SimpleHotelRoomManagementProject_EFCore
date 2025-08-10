@@ -37,5 +37,15 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
         }
 
 
+
+        // Update an existing guest
+        public void UpdateGuest(Guest guest)
+        {
+            _context.Guests.Update(guest); // Updates the guest in the context
+            _context.SaveChanges(); // Saves changes to the database
+        }
+
+
+
     }
 }
