@@ -1,4 +1,5 @@
-﻿using SimpleHotelRoomManagementProject_EFCore.Repositories;
+﻿using SimpleHotelRoomManagementProject_EFCore.Models;
+using SimpleHotelRoomManagementProject_EFCore.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,32 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
     {
         // Constructor Injection 
         private readonly IGuestRepo _guestRepository;
-        public GuestServices(IGuestRepo guestRepository)
+        public GuestServices(IGuestRepo guestRepository) 
         {
             _guestRepository = guestRepository ?? throw new ArgumentNullException(nameof(guestRepository));
         }
+
+        // Add methods for guest services here, e.g., GetGuestById, AddGuest, UpdateGuest, DeleteGuest, etc.
+        // Add new Guest
+        public void AddNewGuest(int guestId, string guestname, string guestemail, string GuestPhoneNo)
+        {
+            var guest = new Guest
+            {
+                GuestId = guestId,
+                GuestName = guestname,
+                GuestEmail = guestemail,
+                GuestPhoneNumber = GuestPhoneNo
+
+            };
+            _guestRepository.AddGuest(guest);
+        }
+
+
+
+
+
+
     }
+
+
 }
