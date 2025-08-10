@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SimpleHotelRoomManagementProject_EFCore.Models
 {
@@ -31,7 +32,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
         public int? Rating { get; set; } // Optional star rating
 
         [Required] // Review date is mandatory
-        public DateTime ReviewDate { get; set; } = DateTime.Now;
+        public DateTime ReviewDate { get; set; } = DateTime.Now; //Date and time when the review was created(defaults to current date/time).
 
     }
 }
