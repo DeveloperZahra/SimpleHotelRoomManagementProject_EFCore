@@ -32,7 +32,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
         public int? Rating { get; set; } // Optional star rating
 
         [Required] // Review date is mandatory
-        public DateTime ReviewDate { get; set; } = DateTime.Now; //Date and time when the review was created(defaults to current date/time).
+        public DateTime ReviewDate { get; set; } = DateTime.Now; // Date and time when the review was created(defaults to current date/time).
 
     }
 }
