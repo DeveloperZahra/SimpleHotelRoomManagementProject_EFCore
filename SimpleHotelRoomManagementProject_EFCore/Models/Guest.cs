@@ -23,6 +23,6 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
 
         [Required]
         [RegularExpression(@"^\d{8}$")]
-        public string GuestPhoneNumber { get; set; }
+        public string GuestPhoneNumber { get; set; } //Required phone number, must be exactly 8 digits
     }
 }
