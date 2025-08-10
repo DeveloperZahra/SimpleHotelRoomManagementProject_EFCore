@@ -18,7 +18,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
         [Required]
         public decimal DailyRate { get; set; } // DailyRate: Required daily rental cost of the room.
 
-        public bool IsReserved { get; set; }
+        public bool IsReserved { get; set; } // IsReserved: Tracks whether the room is currently booked.
 
     }
 }
