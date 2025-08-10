@@ -17,7 +17,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
 
         [Required] // Must be linked to a booking
         [ForeignKey("Booking")]
-        public int BookingId { get; set; }
+        public int BookingId { get; set; } //Foreign key linking this review to a specific booking.
 
         [Required] // Must be linked to a guest
         [ForeignKey("Guest")]
