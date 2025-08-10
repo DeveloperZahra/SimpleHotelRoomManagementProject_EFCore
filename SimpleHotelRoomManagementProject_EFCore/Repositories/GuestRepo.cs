@@ -19,11 +19,22 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
         // Add a new guest to the database
         public void AddGuest(Guest guest)
         {
-            _context.Guest.Add(guest); // Adds the new guest to the context
+            _context.Guests.Add(guest); // Adds the new guest to the context
             _context.SaveChanges(); // Saves changes to the database
         }
 
+        // Get all guests from the database
+        public List<Guest> GetAllGuests()
+        {
+            return _context.Guests.ToList(); // Fetches all guests from the database
+        }
 
+
+        // Get a guest by their ID
+        public Guest GetGuestById(int guestId)
+        {
+            return _context.Guests.Find(guestId); // Finds a guest by their ID
+        }
 
 
     }
