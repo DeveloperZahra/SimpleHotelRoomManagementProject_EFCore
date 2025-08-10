@@ -57,7 +57,12 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
             _guestRepository.UpdateGuest(ExistGuest);
         }
 
+        //to DeleteGuest method to delete a guest by their ID ...
+        public void DeleteGuest(int id)
+        {
+            _guestRepository.DeleteGuest(id);
 
+        }
 
 
 
