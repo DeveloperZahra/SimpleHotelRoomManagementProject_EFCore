@@ -19,7 +19,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
 
         [Required]
         [RegularExpression(@"^[^@\s]+@[^@\s]+\.[^@\s]+$")]
-        public string GuestEmail { get; set; }
+        public string GuestEmail { get; set; } // Required email address, validated with a regex pattern.
 
         [Required]
         [RegularExpression(@"^\d{8}$")]
