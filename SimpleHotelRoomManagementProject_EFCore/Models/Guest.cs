@@ -15,7 +15,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
         public int GuestId { get; set; } //Primary key for identifying each guest.
 
         [Required]
-        public string GuestName { get; set; }
+        public string GuestName { get; set; }  //Required full name of the guest.
 
         [Required]
         [RegularExpression(@"^[^@\s]+@[^@\s]+\.[^@\s]+$")]
