@@ -12,6 +12,6 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
         bool ExistsOverlap(int roomId, DateTime start, DateTime end);  // Checks if there is an overlapping booking for the same room within a given date range
         List<Booking> GetAllBooking();     // Retrieves all bookings from the database
         Booking GetBookingById(int BookingId); // Retrieves a booking by its unique ID
-        void UpdateBooking(Booking booking);
+        void UpdateBooking(Booking booking); //Updates the details of an existing booking
     }
 }
