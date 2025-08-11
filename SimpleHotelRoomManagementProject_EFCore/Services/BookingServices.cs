@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace SimpleHotelRoomManagementProject_EFCore.Services
 {
-    public class BookingServices
+    // Service class that handles business logic related to bookings 
+    public class BookingServices : IBookingServices
     {
         private readonly IBookingRepo _bookingRepository;
         public BookingServices(IBookingRepo bookingRepository)
@@ -30,7 +31,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
             _roomRepository = roomRepository ?? throw new ArgumentNullException(nameof(roomRepository));
         }
 
-        public (bool Ok, string Message, int? BookingId) AddNewBooking(int BookingId, int nights, DateTime checkInDate, int guestId, int roomId, decimal TotalCost , string Status)
+        public (bool Ok, string Message, int? BookingId) AddNewBooking(int BookingId, int nights, DateTime checkInDate, int guestId, int roomId, decimal TotalCost, string Status)
         {
             // 1) validation for number of night
             if (nights <= 0) return (false, "Number of nights must be greater than 0.", null);
@@ -79,4 +80,4 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
 
 
         }
-}
+    }
