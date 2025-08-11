@@ -7,7 +7,7 @@ using SimpleHotelRoomManagementProject_EFCore.Models;
 
 namespace SimpleHotelRoomManagementProject_EFCore.Repositories
 {
-    public class ReviewRepo
+    public class ReviewRepo : IReviewRepo
     {
         private readonly HotelDbContext _context; //The database context used to interact with the database
 
