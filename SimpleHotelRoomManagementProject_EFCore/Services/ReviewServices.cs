@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SimpleHotelRoomManagementProject_EFCore.Models;
+using SimpleHotelRoomManagementProject_EFCore.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,65 @@ using System.Threading.Tasks;
 
 namespace SimpleHotelRoomManagementProject_EFCore.Services
 {
-    internal class ReviewServices
+    public class ReviewServices
     {
+        private readonly IReviewRepo _reviewRepository;
+        public ReviewServices(IReviewRepo reviewRepository)
+        {
+            _reviewRepository = reviewRepository ?? throw new ArgumentNullException(nameof(reviewRepository));
+        }
+        /// Add methods for review services here, e.g., GetReviewById, AddReview, UpdateReview, DeleteReview, etc.
+        // Add new Review to the database through the repository
+        public void AddNewReview(int ReviewId, int Rating, string Comment , DateTime ReviewDate, int BookingId, int GuestId)
+        {
+            // Input validation (example: rating range check)
+            if (Rating < 1 || Rating > 5)
+                throw new ArgumentOutOfRangeException(nameof(Rating), "Rating must be between 1 and 5.");
+
+            if (string.IsNullOrWhiteSpace(Comment))
+                throw new ArgumentException("Comment cannot be empty.", nameof(Comment));
+
+            // Create a new Review object
+            var review = new Review
+            {
+                ReviewId = ReviewId,
+                Rating = Rating,
+                Comment = Comment,
+                BookingId = BookingId
+            };
+            _reviewRepository.AddReview(review);
+        }
+
+        // Get All Reviews in the database through the repository
+        public List<Review> GetAllReviews()
+        {
+            return _reviewRepository.GetAllReviews();
+        }
+
+        // Get Review by Id from the database through the repository
+        public Review GetReviewById(int reviewId)
+        {
+            return _reviewRepository.GetReviewById(reviewId);
+        }
+        // Update Review in the database through the repository
+        public void UpdateReview(int reviewId, int rating, string comments)
+        {
+            var existingReview = _reviewRepository.GetReviewById(reviewId);
+            if (existingReview != null)
+            {
+                existingReview.Rating = rating;
+                existingReview.Comment = comments;
+
+                _reviewRepository.UpdateReview(existingReview);
+            }
+        }
+
+        // Delete Review from the database through the repository
+        public void DeleteReview(int reviewId)
+        {
+            _reviewRepository.DeleteReview(reviewId);
+        }
+
+
     }
 }
