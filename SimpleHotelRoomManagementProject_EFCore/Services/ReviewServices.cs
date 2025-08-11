@@ -3,12 +3,14 @@ using SimpleHotelRoomManagementProject_EFCore.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SimpleHotelRoomManagementProject_EFCore.Services
 {
-    public class ReviewServices
+    // Implementation of the IReviewServices interface that handles business logic
+    public class ReviewServices : IReviewServices
     {
         private readonly IReviewRepo _reviewRepository;
         public ReviewServices(IReviewRepo reviewRepository)
@@ -17,7 +19,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
         }
         /// Add methods for review services here, e.g., GetReviewById, AddReview, UpdateReview, DeleteReview, etc.
         // Add new Review to the database through the repository
-        public void AddNewReview(int ReviewId, int Rating, string Comment , DateTime ReviewDate, int BookingId, int GuestId)
+        public void AddNewReview(int ReviewId, int Rating, string Comment, DateTime ReviewDate, int BookingId, int GuestId)
         {
             // Input validation (example: rating range check)
             if (Rating < 1 || Rating > 5)
