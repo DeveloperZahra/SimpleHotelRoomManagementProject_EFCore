@@ -11,6 +11,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
         Room GetRoomByID(int id); // Retrieves a room by its unique ID.
         void RemoveRoom(int id); //Removes a room by its unique ID.
         void UpdateRoom(int RoomId, bool isReserved); //Updates the reservation status of a room identified by RoomId.
-        void UpdateRoom(int RoomId, int daliyRate);
+        void UpdateRoom(int RoomId, int daliyRate);// Updates the daily rate of a room identified by RoomId.
+                                                   // Note: 'daliyRate' has a typo; should be 'dailyRate
     }
 }
