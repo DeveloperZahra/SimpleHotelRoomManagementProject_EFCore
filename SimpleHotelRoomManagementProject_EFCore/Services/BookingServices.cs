@@ -42,10 +42,11 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
             var room = _roomRepository.GetRoomById(roomId);
             if (room == null) return (false, "There is no room with this id number.", null);
 
+            // 3) Check if the guest exists
             var guest = _GuestRepo.GetGuestById(guestId);
             if (guest == null) return (false, "There is no guest with this id number.", null);
 
-            // 3) avoid booking same room in same date this state named overlaps 
+            // 4) avoid booking same room in same date this state named overlaps 
             // Overlaps rule: (startA < endB) && (endA > startB)
             bool overlaps = _bookingRepository.ExistsOverlap(
                 roomId, checkInDate, checkOutDate);
