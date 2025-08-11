@@ -7,7 +7,8 @@ using SimpleHotelRoomManagementProject_EFCore.Models;
 
 namespace SimpleHotelRoomManagementProject_EFCore.Repositories
 {
-    public  class BookingRepo
+    // Repository class that implements IBookingRepo to handle Booking-related database operations.
+    public class BookingRepo : IBookingRepo
     {
         private readonly HotelDbContext _context;
         public BookingRepo(HotelDbContext context)
@@ -18,7 +19,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
 
 
         // Add a new Booking  to the database
-        public void AddBooking(Booking  booking)
+        public void AddBooking(Booking booking)
         {
             _context.Booking.Add(booking); // Adds the new Booking to the context
             _context.SaveChanges(); // Saves changes to the database
@@ -32,7 +33,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
 
 
         // Get a Booking by its ID
-        public Booking  GetBookingById(int BookingId)
+        public Booking GetBookingById(int BookingId)
         {
             return _context.Booking.Find(BookingId); // Finds a Booking  by its ID
         }
