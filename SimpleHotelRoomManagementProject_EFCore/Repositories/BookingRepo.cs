@@ -31,5 +31,11 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
         }
 
 
+        // Get a Booking by its ID
+        public Booking  GetReservationById(int BookingId)
+        {
+            return _context.booking.Find(BookingId); // Finds a reservation by its ID
+        }
+
     }
 }
