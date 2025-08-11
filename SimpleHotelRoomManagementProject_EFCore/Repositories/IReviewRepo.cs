@@ -7,7 +7,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
     public interface IReviewRepo
     {
         void AddReview(Review review); //Adds a new Review entity to the database
-        void DeleteReview(int reviewId);
+        void DeleteReview(int reviewId); // Deletes an existing Review from the database by its unique ID.
         List<Review> GetAllReviews();
         Review GetReviewById(int reviewId);
         void UpdateReview(Review review);
