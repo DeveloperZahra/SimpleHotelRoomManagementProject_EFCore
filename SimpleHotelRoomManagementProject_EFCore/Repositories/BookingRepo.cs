@@ -24,5 +24,12 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
             _context.SaveChanges(); // Saves changes to the database
         }
 
+        // Get all Booking  from the database
+        public List<Booking> GetAllBooking()
+        {
+            return _context.booking.ToList(); // Fetches all reservations from the database
+        }
+
+
     }
 }
