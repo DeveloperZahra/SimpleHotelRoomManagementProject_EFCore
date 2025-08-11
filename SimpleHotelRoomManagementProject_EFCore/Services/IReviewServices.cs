@@ -15,6 +15,6 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
         void DeleteReview(int reviewId); //Removes an existing review by its unique ID
         List<Review> GetAllReviews(); //Retrieves a list of all reviews in the system.
         Review GetReviewById(int reviewId); //Retrieves a specific review based on its unique ID.
-        void UpdateReview(int reviewId, int rating, string comments);
+        void UpdateReview(int reviewId, int rating, string comments); //Modifies the details (rating, comment) of an existing review
     }
 }
