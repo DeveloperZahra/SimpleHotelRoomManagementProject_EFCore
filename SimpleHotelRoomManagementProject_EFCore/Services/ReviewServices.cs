@@ -56,6 +56,13 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
             var existingReview = _reviewRepository.GetReviewById(reviewId);
             if (existingReview != null)
             {
+                // Optionally validate inputs before applying updates
+                if (rating < 1 || rating > 5)
+                    throw new ArgumentOutOfRangeException(nameof(rating), "Rating must be between 1 and 5.");
+
+                if (string.IsNullOrWhiteSpace(comments))
+                    throw new ArgumentException("Comment cannot be empty.", nameof(comments));
+
                 existingReview.Rating = rating;
                 existingReview.Comment = comments;
 
