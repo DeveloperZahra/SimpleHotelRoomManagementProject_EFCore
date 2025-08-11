@@ -65,7 +65,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
             return _context.Booking.Any(r =>
                 r.RoomId == roomId &&
                 r.Status != "Cancelled" && // Ignore cancelled bookings
-                start < r.CheckOutDate &&
+                start < r.CheckOutDate &&  // Starts before another booking ends
                 end > r.CheckInDate
             );
         }
