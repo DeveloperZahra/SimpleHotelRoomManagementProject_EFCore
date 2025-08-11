@@ -21,28 +21,28 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
         // Add a new Booking  to the database
         public void AddBooking(Booking booking)
         {
-            _context.Booking.Add(booking); //  // Stage the new booking for insertion
+            _context.booking.Add(booking); //  // Stage the new booking for insertion
             _context.SaveChanges(); // Saves changes to the database
         }
 
         // Get all Booking  from the database
         public List<Booking> GetAllBooking()
         {
-            return _context.Booking.ToList(); // Fetches all Booking  from the database
+            return _context.booking.ToList(); // Fetches all Booking  from the database
         }
 
 
         // Get a Booking by its ID
         public Booking GetBookingById(int BookingId)
         {
-            return _context.Booking.Find(BookingId); //Search for booking using primary key
+            return _context.booking.Find(BookingId); //Search for booking using primary key
         }
 
 
         // Update an existing Booking 
         public void UpdateBooking(Booking booking)
         {
-            _context.Booking.Update(booking); // Mark booking as modified
+            _context.booking.Update(booking); // Mark booking as modified
             _context.SaveChanges(); // Saves changes to the database
         }
 
@@ -50,7 +50,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
         // cancel a Booking  by its ID
         public void CancelBooking(int BookingId)
         {
-            var res = _context.Booking.Find(BookingId); // Locate booking by ID
+            var res = _context.booking.Find(BookingId); // Locate booking by ID
             if (res == null) return;                    // If booking not found, exit
            
 
@@ -62,7 +62,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
         // // Check if a booking overlaps with an existing one for the same room
         public bool ExistsOverlap(int roomId, DateTime start, DateTime end)
         {
-            return _context.Booking.Any(r =>
+            return _context.booking.Any(r =>
                 r.RoomId == roomId &&
                 r.Status != "Cancelled" && // Ignore cancelled bookings
                 start < r.CheckOutDate &&  // Starts before another booking ends
