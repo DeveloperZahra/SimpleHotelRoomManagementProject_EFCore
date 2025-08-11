@@ -18,7 +18,7 @@ namespace SimpleHotelRoomManagementProject_EFCore
         // This method is called by EF Core to set up the database connection
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-2EL6LAV ;Initial Catalog=HotelRoomManagementDB;Integrated Security=True;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-2EL6LAV ;Initial Catalog=HotelRoomManagementDB;Integrated Security=True;TrustServerCertificate=True"); // Specifies the SQL Server database connection with server name, database name, and security settings
         }
 
 
