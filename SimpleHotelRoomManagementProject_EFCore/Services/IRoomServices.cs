@@ -6,7 +6,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
     // Provides methods for adding, retrieving, updating, and removing rooms.
     public interface IRoomServices
     {
-        void AddNewRoom(decimal dailyRate, bool isAvailable);
+        void AddNewRoom(decimal dailyRate, bool isAvailable);  // Adds a new room with the specified daily rate and availability 
         List<Room> GetAllRooms();
         Room GetRoomByID(int id);
         void RemoveRoom(int id);
