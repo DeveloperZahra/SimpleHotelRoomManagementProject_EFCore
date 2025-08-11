@@ -7,7 +7,7 @@
     public interface IGuestServices
     {
         void AddNewGuest(int guestId, string guestname, string guestemail, string GuestPhoneNo); //Adds a new guest with the provided ID, name, email, and phone number
-        void DeleteGuest(int id);
+        void DeleteGuest(int id); //Deletes a guest by their unique ID
         void GetAllGuest();
         void GetGuestById(int guestId);
         void UpdateGuest(int GuestID, string phone);
