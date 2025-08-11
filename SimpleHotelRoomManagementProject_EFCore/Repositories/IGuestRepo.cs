@@ -8,7 +8,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
     public interface IGuestRepo
     {
         void AddGuest(Guest guest);  // Adds a new guest record to the database
-        void DeleteGuest(int id);
+        void DeleteGuest(int id); //Deletes a guest record by its unique ID
         List<Guest> GetAllGuests();
         Guest GetGuestById(int guestId);
         void UpdateGuest(Guest guest);
