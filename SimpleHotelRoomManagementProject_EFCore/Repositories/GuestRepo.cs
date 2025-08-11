@@ -11,7 +11,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
     // Repository class that implements IGuestRepo to handle guest-related database operations
     public class GuestRepo : IGuestRepo
     {
-        private readonly HotelDbContext _context;
+        private readonly HotelDbContext _context; // Readonly field to store the application's database context
         public GuestRepo(HotelDbContext context)
         {
             _context = context;
