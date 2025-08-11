@@ -17,7 +17,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
             _context = context;
         }
 
-
+        // Adds a new review to the database
         public void AddReview(Review review)
         {
             _context.Reviews.Add(review); // Adds the new review to the context
