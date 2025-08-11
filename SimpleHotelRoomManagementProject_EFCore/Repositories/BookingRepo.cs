@@ -45,5 +45,26 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
             _context.SaveChanges(); // Saves changes to the database
         }
 
+
+        // cancel a Booking  by its ID
+        public void CancelBooking(int BookingId)
+        {
+            var res = _context.Booking.Find(BookingId);
+            if (res == null) return;
+
+            res.Status = "Cancelled";
+            _context.SaveChanges();
+            // no need to touch Room directly; availability is computed
+        }
+
+
+
+
+
+
+
+
+
+
     }
 }
