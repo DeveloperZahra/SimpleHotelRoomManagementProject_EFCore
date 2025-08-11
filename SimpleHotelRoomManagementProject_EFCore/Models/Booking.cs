@@ -38,5 +38,24 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
 
 
         public string Status { get; set; } // The current status of the booking (e.g., "Confirmed", "Cancelled", "Pending")
+
+
+
+
+        // One-to-One navigation property
+        public Review Review { get; set; } = null;
+
+        // Forign key relationships
+        [ForeignKey("Guest")]
+        public int guestId { get; set; }
+        public Guest Guest { get; set; } // navigation to guest 
+
+        [ForeignKey("Room")]
+        public int roomId { get; set; }
+        public Room Room { get; set; } // navigation to room
     }
+
+
+
+
 }
