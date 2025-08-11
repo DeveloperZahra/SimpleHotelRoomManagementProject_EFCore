@@ -21,7 +21,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
         // Add a new Booking  to the database
         public void AddBooking(Booking booking)
         {
-            _context.Booking.Add(booking); // Adds the new Booking to the context
+            _context.Booking.Add(booking); //  // Stage the new booking for insertion
             _context.SaveChanges(); // Saves changes to the database
         }
 
