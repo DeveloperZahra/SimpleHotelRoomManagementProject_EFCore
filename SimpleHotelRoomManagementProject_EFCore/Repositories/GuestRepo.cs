@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace SimpleHotelRoomManagementProject_EFCore.Repositories
 {
+    // Repository class that implements IGuestRepo to handle guest-related database operations
     public class GuestRepo : IGuestRepo
     {
         private readonly HotelDbContext _context;
