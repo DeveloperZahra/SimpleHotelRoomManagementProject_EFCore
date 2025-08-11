@@ -7,7 +7,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
     public interface IRoomRepo
     {
         void AddRoom(Room room); //Adds a new Room entity to the database.
-        void DeleteRoom(int roomId);
+        void DeleteRoom(int roomId); //Deletes an existing Room from the database by its unique ID.
         List<Room> GetAllRooms();
         Room GetRoomById(int roomId);
         void UpdateRoom(Room room);
