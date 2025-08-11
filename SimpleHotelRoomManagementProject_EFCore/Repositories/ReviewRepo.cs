@@ -7,6 +7,8 @@ using SimpleHotelRoomManagementProject_EFCore.Models;
 
 namespace SimpleHotelRoomManagementProject_EFCore.Repositories
 {
+    // Repository class implementing IReviewRepo interface.
+// Responsible for data access and management of Review entities
     public class ReviewRepo : IReviewRepo
     {
         private readonly HotelDbContext _context; //The database context used to interact with the database
