@@ -36,7 +36,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
                 BookingId = BookingId,
                 GuestId = GuestId
             };
-            _reviewRepository.AddReview(review);
+            _reviewRepository.AddReview(review); // Add review to the repository for persistence
         }
 
         // Get All Reviews in the database through the repository
