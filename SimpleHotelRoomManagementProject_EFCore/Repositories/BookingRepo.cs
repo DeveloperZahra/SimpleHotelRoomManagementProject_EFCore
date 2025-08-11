@@ -41,7 +41,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
         // Update an existing Booking 
         public void UpdateBooking(Booking booking)
         {
-            _context.Booking.Update(booking); // Updates the reservation in the context
+            _context.Booking.Update(booking); // Updates the booking  in the context
             _context.SaveChanges(); // Saves changes to the database
         }
 
