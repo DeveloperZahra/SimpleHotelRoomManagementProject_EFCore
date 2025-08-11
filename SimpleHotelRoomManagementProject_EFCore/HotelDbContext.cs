@@ -22,7 +22,7 @@ namespace SimpleHotelRoomManagementProject_EFCore
         }
 
 
-        public DbSet<Room> Rooms { get; set; }
+        public DbSet<Room> Rooms { get; set; }   // Represents the Rooms table in the database
         public DbSet<Booking> booking { get; set; }
         public DbSet<Guest> Guests { get; set; }
         public DbSet<Review> Reviews { get; set; }
