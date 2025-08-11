@@ -11,7 +11,12 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
     // Service class that handles business logic related to bookings 
     public class BookingServices : IBookingServices
     {
+        
         private readonly IBookingRepo _bookingRepository;
+        private readonly IGuestRepo _guestRepository;
+        private readonly IRoomRepo _roomRepository;
+
+        // Constructor: inject all required repositories in one go
         public BookingServices(IBookingRepo bookingRepository)
         {
             _bookingRepository = bookingRepository ?? throw new ArgumentNullException(nameof(bookingRepository));
