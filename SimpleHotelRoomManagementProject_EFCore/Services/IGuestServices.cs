@@ -10,6 +10,6 @@
         void DeleteGuest(int id); //Deletes a guest by their unique ID
         void GetAllGuest(); //Retrieves and displays all guests
         void GetGuestById(int guestId); //Retrieves and displays a guest by their unique ID
-        void UpdateGuest(int GuestID, string phone);
+        void UpdateGuest(int GuestID, string phone); // Updates the phone number of an existing guest by their ID
     }
 }
