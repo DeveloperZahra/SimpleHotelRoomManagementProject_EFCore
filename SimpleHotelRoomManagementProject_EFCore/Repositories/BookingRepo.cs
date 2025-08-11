@@ -54,7 +54,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
             if (res == null) return;                    // If booking not found, exit
            
 
-            res.Status = "Cancelled";
+            res.Status = "Cancelled"; // Mark booking status as cancelled
             _context.SaveChanges();
             // no need to touch Room directly; availability is computed
         }
