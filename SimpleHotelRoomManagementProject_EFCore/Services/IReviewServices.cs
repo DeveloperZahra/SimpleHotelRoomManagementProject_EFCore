@@ -9,7 +9,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
 // structure for handling review logic
     public interface IReviewServices
     {
-        void AddNewReview(int ReviewId, int Rating, string Comment, DateTime ReviewDate, int BookingId, int GuestId);
+        void AddNewReview(int ReviewId, int Rating, string Comment, DateTime ReviewDate, int BookingId, int GuestId); //Creates a new review record using provided details such as ID, rating, comment, date, booking, and guest.
         void DeleteReview(int reviewId);
         List<Review> GetAllReviews();
         Review GetReviewById(int reviewId);
