@@ -50,8 +50,9 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
         // cancel a Booking  by its ID
         public void CancelBooking(int BookingId)
         {
-            var res = _context.Booking.Find(BookingId);
-            if (res == null) return;
+            var res = _context.Booking.Find(BookingId); // Locate booking by ID
+            if (res == null) return;                    // If booking not found, exit
+           
 
             res.Status = "Cancelled";
             _context.SaveChanges();
