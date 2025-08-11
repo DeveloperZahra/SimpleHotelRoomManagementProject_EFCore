@@ -11,7 +11,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
     //Service class that implements booking-related business logic
     public class BookingServices : IBookingServices
     {
-        private readonly IBookingRepo _bookingRepository;
+        private readonly IBookingRepo _bookingRepository;  // Repository for booking data access operations
         private readonly IGuestRepo _guestRepository;
         private readonly IRoomRepo _roomRepository;
 
