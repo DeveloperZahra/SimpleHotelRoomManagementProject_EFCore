@@ -44,5 +44,8 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
         // Total cost of booking
         [Column(TypeName = "decimal(18,2)")]  // Define precision for currency in DB
         public decimal TotalCost { get; set; } // This should be set externally based on room rates and number of nights
+
+
+        public string Status { get; set; } // The current status of the booking (e.g., "Confirmed", "Cancelled", "Pending")
     }
 }
