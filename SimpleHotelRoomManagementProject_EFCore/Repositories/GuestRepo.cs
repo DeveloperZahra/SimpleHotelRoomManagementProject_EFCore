@@ -14,7 +14,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
         private readonly HotelDbContext _context; // Readonly field to store the application's database context
         public GuestRepo(HotelDbContext context)  // Constructor that injects the HotelDbContext dependency
         {
-            _context = context;
+            _context = context; //Assign the provided context for database access
         }
 
 
