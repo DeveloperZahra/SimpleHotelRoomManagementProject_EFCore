@@ -59,7 +59,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
             // no need to touch Room directly; availability is computed
         }
 
-        // exist Booking 
+        // // Check if a booking overlaps with an existing one for the same room
         public bool ExistsOverlap(int roomId, DateTime start, DateTime end)
         {
             return _context.Booking.Any(r =>
