@@ -10,7 +10,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
     // Repository class that implements IBookingRepo to handle Booking-related database operations.
     public class BookingRepo : IBookingRepo
     {
-        private readonly HotelDbContext _context;
+        private readonly HotelDbContext _context; // Readonly field to store the application's database context
         public BookingRepo(HotelDbContext context)
         {
             _context = context;
