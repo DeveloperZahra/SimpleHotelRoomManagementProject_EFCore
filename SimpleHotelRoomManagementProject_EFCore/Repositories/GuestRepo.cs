@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SimpleHotelRoomManagementProject_EFCore.Repositories
 {
-    public  class GuestRepo
+    public class GuestRepo : IGuestRepo
     {
         private readonly HotelDbContext _context;
         public GuestRepo(HotelDbContext context)
