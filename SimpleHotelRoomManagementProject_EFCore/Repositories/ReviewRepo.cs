@@ -10,6 +10,8 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
     public class ReviewRepo
     {
         private readonly HotelDbContext _context; //The database context used to interact with the database
+
+        //Constructor injecting the database context dependency
         public ReviewRepo(HotelDbContext context)
         {
             _context = context;
