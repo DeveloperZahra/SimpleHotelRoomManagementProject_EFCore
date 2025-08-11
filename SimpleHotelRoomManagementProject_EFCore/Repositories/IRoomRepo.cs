@@ -6,7 +6,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
     // Classes implementing this interface must provide CRUD functionality for Room entities.
     public interface IRoomRepo
     {
-        void AddRoom(Room room);
+        void AddRoom(Room room); //Adds a new Room entity to the database.
         void DeleteRoom(int roomId);
         List<Room> GetAllRooms();
         Room GetRoomById(int roomId);
