@@ -16,6 +16,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
         private readonly IRoomRepo _roomRepository; //Repository for room data access operations
 
         // Constructor injecting all necessary repositories
+        //Throws ArgumentNullException if any repository is null to ensure dependencies are provided.
         public BookingServices(IBookingRepo bookingRepository, IGuestRepo guestRepository, IRoomRepo roomRepository)
         {
             _bookingRepository = bookingRepository ?? throw new ArgumentNullException(nameof(bookingRepository));
