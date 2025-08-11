@@ -35,7 +35,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
         // Get a Booking by its ID
         public Booking GetBookingById(int BookingId)
         {
-            return _context.Booking.Find(BookingId); // Finds a Booking  by its ID
+            return _context.Booking.Find(BookingId); //Search for booking using primary key
         }
 
 
