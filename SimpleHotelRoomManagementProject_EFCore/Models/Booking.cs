@@ -27,6 +27,8 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
         [Required]
         public DateTime CheckOutDate { get; set; } // The scheduled date when the guest will check out
 
+      // Ensures the property is required (cannot be null or missing) 
+      // and must have a value between 1 and the maximum integer value.
         [Required, Range(1, int.MaxValue)]
         public int Nights { get; set; }  // Number of nights stayed
 
