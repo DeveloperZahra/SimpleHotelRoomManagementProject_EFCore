@@ -10,6 +10,6 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
         void DeleteReview(int reviewId); // Deletes an existing Review from the database by its unique ID.
         List<Review> GetAllReviews(); //Retrieves all Review entities from the database.
         Review GetReviewById(int reviewId); //Retrieves a single Review entity by its unique ID
-        void UpdateReview(Review review);
+        void UpdateReview(Review review); //Updates an existing Review entity in the database
     }
 }
