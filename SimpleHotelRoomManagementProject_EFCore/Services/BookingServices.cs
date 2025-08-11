@@ -13,7 +13,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
     {
         private readonly IBookingRepo _bookingRepository;  // Repository for booking data access operations
         private readonly IGuestRepo _guestRepository; // Repository for guest data access operations
-        private readonly IRoomRepo _roomRepository;
+        private readonly IRoomRepo _roomRepository; //Repository for room data access operations
 
         // Constructor injecting all necessary repositories
         public BookingServices(IBookingRepo bookingRepository, IGuestRepo guestRepository, IRoomRepo roomRepository)
