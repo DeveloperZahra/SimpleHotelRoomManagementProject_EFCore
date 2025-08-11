@@ -55,7 +55,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
            
 
             res.Status = "Cancelled"; // Mark booking status as cancelled
-            _context.SaveChanges();
+            _context.SaveChanges(); // Commit change to the database
             // no need to touch Room directly; availability is computed
         }
 
