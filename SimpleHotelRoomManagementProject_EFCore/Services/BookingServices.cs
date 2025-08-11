@@ -23,7 +23,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
             _guestRepository = guestRepository ?? throw new ArgumentNullException(nameof(guestRepository));
             _roomRepository = roomRepository ?? throw new ArgumentNullException(nameof(roomRepository));
         }
-
+        // Adds a new booking with the specified parameters.
         public (bool Ok, string Message, int? BookingId) AddNewBooking(int nights, DateTime checkInDate, int guestId, int roomId)
         {
             // 1) Validate number of nights
