@@ -8,7 +8,7 @@
     {
         void AddNewGuest(int guestId, string guestname, string guestemail, string GuestPhoneNo); //Adds a new guest with the provided ID, name, email, and phone number
         void DeleteGuest(int id); //Deletes a guest by their unique ID
-        void GetAllGuest();
+        void GetAllGuest(); //Retrieves and displays all guests
         void GetGuestById(int guestId);
         void UpdateGuest(int GuestID, string phone);
     }
