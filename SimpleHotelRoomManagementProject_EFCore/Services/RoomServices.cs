@@ -21,7 +21,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
             _roomRepository = roomRepository ?? throw new ArgumentNullException(nameof(roomRepository));
         }
 
-
+        //Creates and adds a new Room with the specified daily rate and availability.
         public void AddNewRoom(decimal dailyRate, bool isAvailable)
         {
             // Create a new Room object
