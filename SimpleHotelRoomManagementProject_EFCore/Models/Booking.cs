@@ -27,19 +27,8 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
         [Required]
         public DateTime CheckOutDate { get; set; } // The scheduled date when the guest will check out
 
-        // Number of nights stayed
-        [NotMapped]  // This tells EF not to map this property to the database, calculated dynamically
-
-        // Calculates the total number of nights for the booking.
-        /// This property is not stored in the database as it is dynamically calculated
-        /// based on the difference between CheckOutDate and CheckInDate.
-        public int Nights
-        {
-            get
-            {
-                return (CheckOutDate.Date - CheckInDate.Date).Days;
-            }
-        }
+        [Required, Range(1, int.MaxValue)]
+        public int Nights { get; set; }  // Number of nights stayed
 
         // Total cost of booking
         [Column(TypeName = "decimal(18,2)")]  // Define precision for currency in DB
