@@ -8,7 +8,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
     public interface IBookingRepo
     {
         void AddBooking(Booking booking); // Adds a new booking record to the database
-        void CancelBooking(int BookingId);
+        void CancelBooking(int BookingId);  // Cancels a booking by its unique ID
         bool ExistsOverlap(int roomId, DateTime start, DateTime end);
         List<Booking> GetAllBooking();
         Booking GetBookingById(int BookingId);
