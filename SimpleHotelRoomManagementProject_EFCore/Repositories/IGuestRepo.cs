@@ -11,6 +11,6 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
         void DeleteGuest(int id); //Deletes a guest record by its unique ID
         List<Guest> GetAllGuests(); //Retrieves all guests from the database
         Guest GetGuestById(int guestId); //Retrieves a guest by their unique ID
-        void UpdateGuest(Guest guest);
+        void UpdateGuest(Guest guest); //Updates the details of an existing guest
     }
 }
