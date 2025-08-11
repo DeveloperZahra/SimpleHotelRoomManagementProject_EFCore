@@ -1,4 +1,5 @@
 ﻿using SimpleHotelRoomManagementProject_EFCore.Models;
+using System.Xml;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace SimpleHotelRoomManagementProject_EFCore.Services
@@ -10,7 +11,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
     public interface IReviewServices
     {
         void AddNewReview(int ReviewId, int Rating, string Comment, DateTime ReviewDate, int BookingId, int GuestId); //Creates a new review record using provided details such as ID, rating, comment, date, booking, and guest.
-        void DeleteReview(int reviewId);
+        void DeleteReview(int reviewId); //Removes an existing review by its unique ID
         List<Review> GetAllReviews();
         Review GetReviewById(int reviewId);
         void UpdateReview(int reviewId, int rating, string comments);
