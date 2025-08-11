@@ -6,7 +6,7 @@
     // related to adding, retrieving, updating, and deleting guest records.
     public interface IGuestServices
     {
-        void AddNewGuest(int guestId, string guestname, string guestemail, string GuestPhoneNo);
+        void AddNewGuest(int guestId, string guestname, string guestemail, string GuestPhoneNo); //Adds a new guest with the provided ID, name, email, and phone number
         void DeleteGuest(int id);
         void GetAllGuest();
         void GetGuestById(int guestId);
