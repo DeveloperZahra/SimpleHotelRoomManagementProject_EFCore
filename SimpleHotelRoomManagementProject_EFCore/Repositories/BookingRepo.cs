@@ -27,14 +27,22 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
         // Get all Booking  from the database
         public List<Booking> GetAllBooking()
         {
-            return _context.booking.ToList(); // Fetches all Booking  from the database
+            return _context.Booking.ToList(); // Fetches all Booking  from the database
         }
 
 
         // Get a Booking by its ID
-        public Booking  GetReservationById(int BookingId)
+        public Booking  GetBookingById(int BookingId)
         {
-            return _context.booking.Find(BookingId); // Finds a Booking  by its ID
+            return _context.Booking.Find(BookingId); // Finds a Booking  by its ID
+        }
+
+
+        // Update an existing Booking 
+        public void UpdateBooking(Booking booking)
+        {
+            _context.Booking.Update(booking); // Updates the reservation in the context
+            _context.SaveChanges(); // Saves changes to the database
         }
 
     }
