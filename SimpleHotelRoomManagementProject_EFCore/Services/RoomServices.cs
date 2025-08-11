@@ -13,7 +13,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
     // including adding, retrieving, updating, and removing rooms
     public class RoomServices : IRoomServices
     {
-        private readonly IRoomRepo _roomRepository;
+        private readonly IRoomRepo _roomRepository; //Repository dependency for room data access
         public RoomServices(IRoomRepo roomRepository)
         {
             _roomRepository = roomRepository ?? throw new ArgumentNullException(nameof(roomRepository));
