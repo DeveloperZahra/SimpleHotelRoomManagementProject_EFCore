@@ -27,7 +27,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Repositories
         // Get all Booking  from the database
         public List<Booking> GetAllBooking()
         {
-            return _context.booking.ToList(); // Fetches all reservations from the database
+            return _context.booking.ToList(); // Fetches all Booking  from the database
         }
 
 
