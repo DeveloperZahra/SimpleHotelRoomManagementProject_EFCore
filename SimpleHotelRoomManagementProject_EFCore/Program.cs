@@ -27,6 +27,10 @@ namespace SimpleHotelRoomManagementProject_EFCore
 
             bool exit = false; // Flag to exit the program
 
+            // Main Menu Loop
+            // Keeps running until the user chooses to exit
+            while (!exit)
+            {
 
 
 
@@ -49,7 +53,6 @@ namespace SimpleHotelRoomManagementProject_EFCore
 
 
 
-
-        }
+            }
     }
 }
