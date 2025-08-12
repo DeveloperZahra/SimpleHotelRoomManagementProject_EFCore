@@ -41,7 +41,17 @@ namespace SimpleHotelRoomManagementProject_EFCore.Validation
         }
 
         // Reads a non-empty string from the console (trims whitespace)
+        public static string GetNonEmptyString()
+        {
+            while (true)
+            {
+                string? s = Console.ReadLine();
+                if (!string.IsNullOrWhiteSpace(s))
+                    return s.Trim();
 
+                Console.Write("Input cannot be empty. Please enter a valid value: ");
+            }
+        }
 
 
     }
