@@ -222,6 +222,21 @@ namespace SimpleHotelRoomManagementProject_EFCore
             }
 
 
+            // Find room by RoomNumber
+            var allRooms = _roomRepo.GetAllRooms();
+            var room = allRooms.FirstOrDefault(r => r.RoomNumber == roomNumber);
+
+            if (room == null)
+            {
+                Console.WriteLine($"Room with number {roomNumber} does not exist. Reservation aborted.");
+                return;
+            }
+
+            if (room.IsReserved)
+            {
+                Console.WriteLine($"Room {roomNumber} is already reserved. Choose another room or cancel existing reservation first.");
+                return;
+            }
 
 
 
