@@ -40,6 +40,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Validation
             }
         }
 
+        // Reads a non-empty string from the console (trims whitespace)
 
 
 
