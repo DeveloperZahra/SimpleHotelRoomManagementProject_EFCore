@@ -146,6 +146,7 @@ namespace SimpleHotelRoomManagementProject_EFCore
         }
 
         //2) View all rooms (Available and Reserved)
+        // Uses room repository to get full list and prints IsReserved status.
         private static void Menu_ViewAllRooms()
         {
             Console.WriteLine("All rooms (Available / Reserved):");
