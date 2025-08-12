@@ -5,10 +5,8 @@ namespace SimpleHotelRoomManagementProject_EFCore
 {
     internal class Program
     {
-        static void Main(string[] args)
-        {
-
-            // Shared objects (initialized inside Main)
+        
+        // Shared objects (initialized inside Main)
         private static HotelDbContext _context = null!;
         private static IRoomRepo _roomRepo = null!;
         private static IGuestRepo _guestRepo = null!;
@@ -20,8 +18,11 @@ namespace SimpleHotelRoomManagementProject_EFCore
         private static IBookingServices _bookingServices = null!;
         private static IReviewServices _reviewServices = null!;
 
+        static void Main(string[] args)
+        { 
 
-
+        // Create DbContext and repos/services
+        _context = new HotelDbContext();
 
 
 
@@ -53,5 +54,5 @@ namespace SimpleHotelRoomManagementProject_EFCore
 
 
     }
-    }
+}
 }
