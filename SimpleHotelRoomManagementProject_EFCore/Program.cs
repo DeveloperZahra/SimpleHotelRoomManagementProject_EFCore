@@ -98,7 +98,7 @@ namespace SimpleHotelRoomManagementProject_EFCore
                         Menu_ReserveRoomForGuest();
                         break;
                     case "4":
-                        Menu_ViewAllReservationsWithTotal();
+                        Menu_ViewAllBookingWithTotal();
                         break;
                     case "5":
                         Menu_SearchReservationByGuestName();
@@ -144,7 +144,7 @@ namespace SimpleHotelRoomManagementProject_EFCore
             Console.WriteLine($"Room {roomNumber} added successfully with daily rate {dailyRate:C}.");
         }
 
-        //implement menu_viewallrooms method 
+        //View all rooms (Available and Reserved)
         private static void Menu_ViewAllRooms()
         {
             Console.WriteLine("All rooms (Available / Reserved):");
@@ -258,8 +258,34 @@ namespace SimpleHotelRoomManagementProject_EFCore
             }
         }
 
+        //View all reservations with total cost
+        private static void Menu_ViewAllBookingWithTotal()
+        {
+            Console.WriteLine("All reservations:");
+
+            var bookings = _bookingRepo.GetAllBooking();
+
+            if (bookings == null || bookings.Count == 0)
+            {
+                Console.WriteLine("No reservations found.");
+                return;
+            }
+
+            Console.WriteLine("--------------------------------------------------------------------------");
+            Console.WriteLine("BookingId | GuestName | RoomNumber | Nights | TotalCost | Status");
+            Console.WriteLine("--------------------------------------------------------------------------");
+
+            foreach (var b in bookings)
+            {
 
 
-    }
+
+
+
+
+
+
+
+            }
     }
 }
