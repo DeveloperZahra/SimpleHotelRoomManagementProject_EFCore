@@ -46,6 +46,9 @@ namespace SimpleHotelRoomManagementProject_EFCore
                 // Read user's choice
                 string choice = Console.ReadLine();
 
+                // Process user's choice
+                switch (choice)
+                {
 
 
 
@@ -64,7 +67,6 @@ namespace SimpleHotelRoomManagementProject_EFCore
 
 
 
-
-            }
+                }
     }
 }
