@@ -192,6 +192,14 @@ namespace SimpleHotelRoomManagementProject_EFCore
             Console.Write(" - Nights: ");
             int nights = InputValidator.GetPositiveInt();
 
+            // Find guest (case-insensitive) in repository
+            var guests = _guestRepo.GetAllGuests();
+            var matchedGuest = guests
+                .FirstOrDefault(g => string.Equals(g.GuestName?.Trim(), guestName.Trim(), StringComparison.OrdinalIgnoreCase));
+
+            if (matchedGuest == null)
+            {
+                Console.WriteLine("Guest not found. We will create a new guest record.");
 
 
 
@@ -206,6 +214,6 @@ namespace SimpleHotelRoomManagementProject_EFCore
 
 
 
-        }
+            }
     }
 }
