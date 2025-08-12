@@ -405,10 +405,22 @@ namespace SimpleHotelRoomManagementProject_EFCore
                 return;
             }
 
+            // Cancel via repository method
+            _bookingRepo.CancelBooking(candidate.BookingId);
 
+            // also mark the room as not reserved
+            var room = _roomRepo.GetAllRooms().FirstOrDefault(r => r.RoomNumber == roomNumber);
+            if (room != null)
+            {
+                _roomServices.UpdateRoom(room.RoomId, false); // set IsReserved = false
+            }
 
-
-
+            Console.WriteLine($"Reservation (BookingId: {candidate.BookingId}) for room {roomNumber} has been cancelled.");
         }
+
+
+
+
     }
+}
 }
