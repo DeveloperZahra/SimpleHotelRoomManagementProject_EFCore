@@ -119,7 +119,7 @@ namespace SimpleHotelRoomManagementProject_EFCore
                 }
             }
         }
-        //implement menu_addnewroom method 
+        //1) Add a new room (Room Number, Daily Rate)
         private static void Menu_AddNewRoom()
         {
             Console.WriteLine("Add a new room:");
@@ -144,7 +144,7 @@ namespace SimpleHotelRoomManagementProject_EFCore
             Console.WriteLine($"Room {roomNumber} added successfully with daily rate {dailyRate:C}.");
         }
 
-        //View all rooms (Available and Reserved)
+        //2) View all rooms (Available and Reserved)
         private static void Menu_ViewAllRooms()
         {
             Console.WriteLine("All rooms (Available / Reserved):");
