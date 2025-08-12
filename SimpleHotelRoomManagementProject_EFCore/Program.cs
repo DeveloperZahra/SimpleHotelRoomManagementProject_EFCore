@@ -1,4 +1,6 @@
-﻿namespace SimpleHotelRoomManagementProject_EFCore
+﻿using SimpleHotelRoomManagementProject_EFCore.Repositories;
+
+namespace SimpleHotelRoomManagementProject_EFCore
 {
     internal class Program
     {
@@ -11,6 +13,13 @@
 
             // Create DbContext
             using var context = new HotelDbContext();
+
+            // Initialize repositories
+            var roomRepo = new RoomRepo(context);
+            var bookingRepo = new BookingRepo(context);
+            var guestRepo = new GuestRepo(context);
+            var reviewRepo = new ReviewRepo(context);
+
 
 
 
