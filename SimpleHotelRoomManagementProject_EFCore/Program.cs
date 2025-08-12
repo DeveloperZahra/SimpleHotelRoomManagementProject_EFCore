@@ -62,6 +62,24 @@ namespace SimpleHotelRoomManagementProject_EFCore
             Console.WriteLine();
         }
 
+        // Display main menu
+        private static void MainMenu()
+        {
+            bool exit = false;
+
+            while (!exit)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Main Menu - Choose an option:");
+                Console.WriteLine("1. Add a new room");
+                Console.WriteLine("2. View all rooms");
+                Console.WriteLine("3. Reserve a room for a guest");
+                Console.WriteLine("4. View all Booking with total cost");
+                Console.WriteLine("5. Search reservation by guest name");
+                Console.WriteLine("6. Find the highest-paying guest");
+                Console.WriteLine("7. Cancel a Booking by room number");
+                Console.WriteLine("8. Exit the system");
+                Console.Write("Enter your choice (1-8): ");
 
 
 
@@ -82,6 +100,7 @@ namespace SimpleHotelRoomManagementProject_EFCore
 
 
 
-    }
-}
+
+            }
+        }
 }
