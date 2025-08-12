@@ -81,6 +81,9 @@ namespace SimpleHotelRoomManagementProject_EFCore
                 Console.WriteLine("8. Exit the system");
                 Console.Write("Enter your choice (1-8): ");
 
+                string? choice = Console.ReadLine();
+
+                Console.WriteLine(); // spacer
 
 
 
