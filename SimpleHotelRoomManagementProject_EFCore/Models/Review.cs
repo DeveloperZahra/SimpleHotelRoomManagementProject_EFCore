@@ -34,7 +34,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
         [Required] // Review date is mandatory
         public DateTime ReviewDate { get; set; } = DateTime.Now; // Date and time when the review was created(defaults to current date/time).
 
-        public Booking booking { get; set; } = default!; // Navigation property to Room
+        //public Booking booking { get; set; } = default!; // Navigation property to Room
 
     }
 }

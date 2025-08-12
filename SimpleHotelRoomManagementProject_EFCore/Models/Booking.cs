@@ -14,13 +14,8 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
         [Key]
         public int BookingId { get; set; }  //Uniquely identifies each booking record.
 
-        [Required]
-        public int GuestId { get; set; }   /// Foreign key linking to the Guest who made this booking.
-                                           /// This is a required field.
-
-        [Required]
-        public int RoomId { get; set; } // Foreign key linking to the Room that is booked.
-
+        
+        
         [Required]
         public DateTime CheckInDate { get; set; } // The scheduled date when the guest will check in
 
@@ -45,13 +40,14 @@ namespace SimpleHotelRoomManagementProject_EFCore.Models
         // One-to-One navigation property
         public Review Review { get; set; } = null;
 
-        // Forign key relationships
-        [ForeignKey("Guest")]
-        public int guestId { get; set; }
+        // Foreign key relationships
+
+        [ForeignKey("GuestId")]
+        public int GuestId { get; set; }
         public Guest Guest { get; set; } // navigation to guest 
 
-        [ForeignKey("Room")]
-        public int roomId { get; set; }
+        [ForeignKey("RoomId")]
+        public int RoomId { get; set; }
         public Room Room { get; set; } // navigation to room
     }
 

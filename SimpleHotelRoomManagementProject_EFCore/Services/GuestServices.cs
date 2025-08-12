@@ -19,11 +19,10 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
 
         // Add methods for guest services here, e.g., GetGuestById, AddGuest, UpdateGuest, DeleteGuest, etc.
         // Add new Guest
-        public void AddNewGuest(int guestId, string guestname, string guestemail, string GuestPhoneNo)
+        public void AddNewGuest(string guestname, string guestemail, string GuestPhoneNo)
         {
             var guest = new Guest
             {
-                GuestId = guestId,
                 GuestName = guestname,
                 GuestEmail = guestemail,
                 GuestPhoneNumber = GuestPhoneNo
@@ -53,7 +52,7 @@ namespace SimpleHotelRoomManagementProject_EFCore.Services
             var ExistGuest = _guestRepository.GetGuestById(GuestID);
             if (ExistGuest != null)
 
-                ExistGuest.Phone = phone;
+                ExistGuest.GuestPhoneNumber = phone;
             _guestRepository.UpdateGuest(ExistGuest);
         }
 

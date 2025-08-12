@@ -330,7 +330,7 @@ namespace SimpleHotelRoomManagementProject_EFCore
             {
                 var full = _bookingRepo.GetBookingById(b.BookingId);
                 string guestName = full.Guest?.GuestName ?? "(unknown)";
-                int roomNumber = full.Room?.RoomNumber ?? full.roomId;
+                int roomNumber = full.Room?.RoomNumber ?? full.RoomId;
                 decimal total = full.TotalCost;
                 if (total == 0 && full.Room != null) total = full.Room.DailyRate * full.Nights;
                 Console.WriteLine($"Booking {full.BookingId} | Guest: {guestName} | Room: {roomNumber} | Nights: {full.Nights} | Total: {total:C}");
@@ -397,8 +397,8 @@ namespace SimpleHotelRoomManagementProject_EFCore
             var bookings = _bookingRepo.GetAllBooking();
             // Get bookings whose related room has the required RoomNumber
             var candidate = bookings.FirstOrDefault(b => (b.Room != null && b.Room.RoomNumber == roomNumber)
-                                                         || (b.roomId != 0 && // fallback if navigation not loaded
-                                                             _roomRepo.GetRoomById(b.roomId)?.RoomNumber == roomNumber));
+                                                         || (b.RoomId != 0 && // fallback if navigation not loaded
+                                                             _roomRepo.GetRoomById(b.RoomId)?.RoomNumber == roomNumber));
 
             if (candidate == null)
             {
@@ -424,4 +424,4 @@ namespace SimpleHotelRoomManagementProject_EFCore
 
     }
 }
-}
+
