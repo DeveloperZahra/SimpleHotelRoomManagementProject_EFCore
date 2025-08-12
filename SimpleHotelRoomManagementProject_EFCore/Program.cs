@@ -1,6 +1,7 @@
 ﻿using SimpleHotelRoomManagementProject_EFCore.Models;
 using SimpleHotelRoomManagementProject_EFCore.Repositories;
 using SimpleHotelRoomManagementProject_EFCore.Services;
+using System.Text.RegularExpressions;
 
 namespace SimpleHotelRoomManagementProject_EFCore
 {
@@ -296,6 +297,7 @@ namespace SimpleHotelRoomManagementProject_EFCore
         }
 
         // 5) Search reservation by guest name (case-insensitive)
+       // Filters bookings and prints matched records
         private static void Menu_SearchBookingByGuestName()
         {
             Console.Write("Enter guest name to search (case-insensitive): ");
