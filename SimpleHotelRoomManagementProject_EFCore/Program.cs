@@ -1,4 +1,5 @@
-﻿using SimpleHotelRoomManagementProject_EFCore.Repositories;
+﻿using SimpleHotelRoomManagementProject_EFCore.Models;
+using SimpleHotelRoomManagementProject_EFCore.Repositories;
 using SimpleHotelRoomManagementProject_EFCore.Services;
 
 namespace SimpleHotelRoomManagementProject_EFCore
@@ -85,25 +86,104 @@ namespace SimpleHotelRoomManagementProject_EFCore
 
                 Console.WriteLine(); // spacer
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                switch (choice)
+                {
+                    case "1":
+                        Menu_AddNewRoom();
+                        break;
+                    case "2":
+                        Menu_ViewAllRooms();
+                        break;
+                    case "3":
+                        Menu_ReserveRoomForGuest();
+                        break;
+                    case "4":
+                        Menu_ViewAllReservationsWithTotal();
+                        break;
+                    case "5":
+                        Menu_SearchReservationByGuestName();
+                        break;
+                    case "6":
+                        Menu_FindHighestPayingGuest();
+                        break;
+                    case "7":
+                        Menu_CancelReservationByRoomNumber();
+                        break;
+                    case "8":
+                        Console.WriteLine("Exiting the system. Goodbye!");
+                        exit = true;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid choice. Please enter a number between 1 and 8.");
+                        break;
+                }
             }
         }
+        //implement menu_addnewroom method 
+        private static void Menu_AddNewRoom()
+        {
+            Console.WriteLine("Add a new room:");
+
+            Console.Write(" - Room Number: ");
+            int roomNumber = InputValidator.GetPositiveInt();
+
+            Console.Write(" - Daily Rate: ");
+            decimal dailyRate = InputValidator.GetPositiveDecimal();
+
+            // Create room using model fields available in your project
+            var room = new Room
+            {
+                RoomNumber = roomNumber,
+                DailyRate = dailyRate,
+                IsReserved = false // new rooms are available by default
+            };
+
+            // Use repository directly so RoomNumber is saved exactly as entered
+            _roomRepo.AddRoom(room);
+
+            Console.WriteLine($"Room {roomNumber} added successfully with daily rate {dailyRate:C}.");
+        }
+
+        //implement menu_viewallrooms method 
+        private static void Menu_ViewAllRooms()
+        {
+            Console.WriteLine("All rooms (Available / Reserved):");
+
+            List<Room> rooms = _roomRepo.GetAllRooms();
+
+            if (rooms == null || rooms.Count == 0)
+            {
+                Console.WriteLine("No rooms found.");
+                return;
+            }
+
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("ID | RoomNumber | DailyRate | Reserved?");
+            Console.WriteLine("------------------------------------------------------");
+            foreach (var r in rooms)
+            {
+                string reservedText = r.IsReserved ? "Reserved" : "Available";
+                Console.WriteLine($"{r.RoomId} | {r.RoomNumber} | {r.DailyRate:C} | {reservedText}");
+            }
+            Console.WriteLine("------------------------------------------------------");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+}
 }
