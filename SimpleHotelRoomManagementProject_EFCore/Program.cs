@@ -277,15 +277,31 @@ namespace SimpleHotelRoomManagementProject_EFCore
 
             foreach (var b in bookings)
             {
+                // Try to ensure we have up-to-date navigation properties:
+                var full = _bookingRepo.GetBookingById(b.BookingId); // get single with any navigation loaded by repo
+                string guestName = full.Guest?.GuestName ?? "(unknown)";
+                int roomNumber = full.Room?.RoomNumber ?? b.RoomId; // fallback
+                int nights = full.Nights;
+                decimal total = full.TotalCost;
 
+                if (total == 0 && full.Room != null)
+                {
+                    total = full.Room.DailyRate * full.Nights;
+                }
 
-
-
-
-
-
-
-
+                Console.WriteLine($"{full.BookingId} | {guestName} | {roomNumber} | {nights} | {total:C} | {full.Status}");
             }
+
+            Console.WriteLine("--------------------------------------------------------------------------");
+        }
+
+
+
+
+
+
+
+
+    }
     }
 }
