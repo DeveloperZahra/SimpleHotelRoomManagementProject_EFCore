@@ -216,18 +216,21 @@ namespace SimpleHotelRoomManagementProject_EFCore
                     GuestPhoneNumber = phone
                 };
 
-
-
-
-
-
-
-
-
-
-
-
-
+                _guestRepo.AddGuest(newGuest);
+                matchedGuest = newGuest; // now use the newly created guest
+                Console.WriteLine($"Created guest '{matchedGuest.GuestName}' with ID {matchedGuest.GuestId}.");
             }
+
+
+
+
+
+
+
+
+
+
+
+        }
     }
 }
