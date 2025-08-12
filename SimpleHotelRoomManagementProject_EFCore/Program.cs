@@ -201,6 +201,15 @@ namespace SimpleHotelRoomManagementProject_EFCore
             {
                 Console.WriteLine("Guest not found. We will create a new guest record.");
 
+                // Ask for minimal info - email and phone (project's Guest model expects these)
+                Console.Write(" - Guest Email: ");
+                string email = InputValidator.GetNonEmptyString();
+
+                Console.Write(" - Guest Phone (8 digits expected by your model): ");
+                string phone = InputValidator.GetNonEmptyString();
+
+                var newGuest = new Guest
+                {
 
 
 
@@ -214,6 +223,7 @@ namespace SimpleHotelRoomManagementProject_EFCore
 
 
 
-            }
+
+                }
     }
 }
