@@ -2,6 +2,7 @@
 using SimpleHotelRoomManagementProject_EFCore.Repositories;
 using SimpleHotelRoomManagementProject_EFCore.Services;
 using System.Text.RegularExpressions;
+using System.Threading.Channels;
 
 namespace SimpleHotelRoomManagementProject_EFCore
 {
@@ -108,7 +109,7 @@ namespace SimpleHotelRoomManagementProject_EFCore
                         Menu_FindHighestPayingGuest();
                         break;
                     case "7":
-                        Menu_CancelReservationByRoomNumber();
+                        Menu_CancelBookingByRoomNumber();
                         break;
                     case "8":
                         Console.WriteLine("Exiting the system. Goodbye!");
@@ -382,10 +383,32 @@ namespace SimpleHotelRoomManagementProject_EFCore
         }
 
 
+        // 7) Cancel a reservation by room number
+        /// Finds the (first) active booking for the given room number and cancels it.
+        /// Also sets the room's IsReserved to false.
+
+        private static void Menu_CancelBookingByRoomNumber()
+        {
+            Console.Write("Enter room number to cancel the reservation for: ");
+            int roomNumber = InputValidator.GetPositiveInt();
+
+            // Find bookings for that room number
+            var bookings = _bookingRepo.GetAllBooking();
+            // Get bookings whose related room has the required RoomNumber
+            var candidate = bookings.FirstOrDefault(b => (b.Room != null && b.Room.RoomNumber == roomNumber)
+                                                         || (b.roomId != 0 && // fallback if navigation not loaded
+                                                             _roomRepo.GetRoomById(b.roomId)?.RoomNumber == roomNumber));
+
+            if (candidate == null)
+            {
+                Console.WriteLine($"No reservation found for room number {roomNumber}.");
+                return;
+            }
 
 
 
 
+
+        }
     }
-}
 }
