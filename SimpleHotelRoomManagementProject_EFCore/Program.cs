@@ -58,11 +58,9 @@ namespace SimpleHotelRoomManagementProject_EFCore
         private static void ShowWelcomeBanner()
         {
             Console.Clear();
-            Console.WriteLine("############################################################");
-            Console.WriteLine("#                                                          #");
-            Console.WriteLine("#            WELCOME TO HOTEL ROOM MANAGEMENT               #");
-            Console.WriteLine("#                                                          #");
-            Console.WriteLine("############################################################");
+            Console.WriteLine("===================================");
+            Console.WriteLine("   Welcome to Hotel Management");
+            Console.WriteLine("===================================\n");
             Console.WriteLine();
         }
 
