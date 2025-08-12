@@ -47,27 +47,30 @@ namespace SimpleHotelRoomManagementProject_EFCore
             // Show welcome and enter menu
            
             ShowWelcomeBanner();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            MainMenu(); // start interactive menu loop
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
 }
 }
