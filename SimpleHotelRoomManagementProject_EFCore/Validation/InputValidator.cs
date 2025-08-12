@@ -10,6 +10,19 @@ namespace SimpleHotelRoomManagementProject_EFCore.Validation
     /// Keeps prompting until valid input is provided.
     public static class InputValidator
     {
+        // Reads a positive integer from console.
+        /// Keeps prompting until the user enters a valid positive integer (> 0)
 
+        public static int GetPositiveInt()
+        {
+            while (true)
+            {
+                string? s = Console.ReadLine();
+                if (int.TryParse(s, out int val) && val > 0)
+                    return val;
+
+                Console.Write("Invalid input. Please enter a positive integer: ");
+            }
+        }
     }
 }
