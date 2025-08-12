@@ -32,7 +32,16 @@ namespace SimpleHotelRoomManagementProject_EFCore
             while (!exit)
             {
 
-
+                // Display menu options
+                Console.WriteLine("\n===== Main Menu =====");
+                Console.WriteLine("1. Add Room");
+                Console.WriteLine("2. View All Rooms");
+                Console.WriteLine("3. Add Booking");
+                Console.WriteLine("4. View All Bookings");
+                Console.WriteLine("5. Search Booking by Guest Name");
+                Console.WriteLine("6. Cancel Booking");
+                Console.WriteLine("7. Exit");
+                Console.Write("Choose an option: ");
 
 
 
