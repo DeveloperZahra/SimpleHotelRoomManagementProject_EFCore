@@ -44,7 +44,9 @@ namespace SimpleHotelRoomManagementProject_EFCore
             _bookingServices = new BookingServices(_bookingRepo, _guestRepo, _roomRepo);
             _reviewServices = new ReviewServices(_reviewRepo);
 
-
+            // Show welcome and enter menu
+           
+            ShowWelcomeBanner();
 
 
 
