@@ -32,7 +32,11 @@ namespace SimpleHotelRoomManagementProject_EFCore
                 Console.WriteLine("Database already exists.");
 
 
-
+            // Initialize repositories (use repository when we need direct control)
+            _roomRepo = new RoomRepo(_context);
+            _guestRepo = new GuestRepo(_context);
+            _bookingRepo = new BookingRepo(_context);
+            _reviewRepo = new ReviewRepo(_context);
 
 
 
