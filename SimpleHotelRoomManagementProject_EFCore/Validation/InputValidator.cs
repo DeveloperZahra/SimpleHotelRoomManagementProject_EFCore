@@ -24,5 +24,24 @@ namespace SimpleHotelRoomManagementProject_EFCore.Validation
                 Console.Write("Invalid input. Please enter a positive integer: ");
             }
         }
+
+        /// Reads a positive decimal number (currency, rate) from console.
+        /// Keeps prompting until valid.
+
+        public static decimal GetPositiveDecimal()
+        {
+            while (true)
+            {
+                string? s = Console.ReadLine();
+                if (decimal.TryParse(s, out decimal val) && val > 0)
+                    return val;
+
+                Console.Write("Invalid input. Please enter a positive decimal (for example 100.00): ");
+            }
+        }
+
+
+
+
     }
 }
