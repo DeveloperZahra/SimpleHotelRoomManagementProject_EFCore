@@ -43,6 +43,9 @@ namespace SimpleHotelRoomManagementProject_EFCore
                 Console.WriteLine("7. Exit");
                 Console.Write("Choose an option: ");
 
+                // Read user's choice
+                string choice = Console.ReadLine();
+
 
 
 
