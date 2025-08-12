@@ -329,7 +329,7 @@ namespace SimpleHotelRoomManagementProject_EFCore
         }
 
         // 6) Find the highest-paying guest
-
+        // Sums total cost per guest and finds the maximum
         private static void Menu_FindHighestPayingGuest()
         {
             var bookings = _bookingRepo.GetAllBooking();
