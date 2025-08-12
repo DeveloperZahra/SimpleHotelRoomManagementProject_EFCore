@@ -8,6 +8,34 @@
             Console.WriteLine("====================================");
             Console.WriteLine(" Welcome to the Simple Hotel System ");
             Console.WriteLine("====================================\n");
+
+            // Create DbContext
+            using var context = new HotelDbContext();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 }
