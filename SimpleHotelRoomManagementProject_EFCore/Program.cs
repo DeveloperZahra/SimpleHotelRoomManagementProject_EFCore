@@ -24,6 +24,12 @@ namespace SimpleHotelRoomManagementProject_EFCore
         // Create DbContext and repos/services
         _context = new HotelDbContext();
 
+            // Ensure DB is created (shows a message)
+            bool isCreated = _context.Database.EnsureCreated();
+            if (isCreated)
+                Console.WriteLine("Database has been created successfully.");
+            else
+                Console.WriteLine("Database already exists.");
 
 
 
@@ -52,7 +58,6 @@ namespace SimpleHotelRoomManagementProject_EFCore
 
 
 
-
-    }
+        }
 }
 }
