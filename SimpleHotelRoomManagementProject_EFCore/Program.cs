@@ -241,12 +241,16 @@ namespace SimpleHotelRoomManagementProject_EFCore
             // Determine check-in date: using NOW as default (menu did not ask for date)
             DateTime checkInDate = DateTime.Now;
 
+            // Use booking service to create booking (it will calculate totals, set booking fields in project logic)
+            var result = _bookingServices.AddNewBooking(nights, checkInDate, matchedGuest.GuestId, room.RoomId);
+
+            if (result.Ok)
+            {
 
 
 
 
 
-
-        }
+            }
     }
 }
