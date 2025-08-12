@@ -50,6 +50,17 @@ namespace SimpleHotelRoomManagementProject_EFCore
             MainMenu(); // start interactive menu loop
         }
 
+        // Display welcome message
+        private static void ShowWelcomeBanner()
+        {
+            Console.Clear();
+            Console.WriteLine("############################################################");
+            Console.WriteLine("#                                                          #");
+            Console.WriteLine("#            WELCOME TO HOTEL ROOM MANAGEMENT               #");
+            Console.WriteLine("#                                                          #");
+            Console.WriteLine("############################################################");
+            Console.WriteLine();
+        }
 
 
 
