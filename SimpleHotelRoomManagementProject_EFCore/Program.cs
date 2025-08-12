@@ -121,6 +121,8 @@ namespace SimpleHotelRoomManagementProject_EFCore
             }
         }
         //1) Add a new room (Room Number, Daily Rate)
+        // Uses repository.AddRoom so we can set RoomNumber explicitly (service method in project
+        /// only accepts dailyRate & availability).
         private static void Menu_AddNewRoom()
         {
             Console.WriteLine("Add a new room:");
