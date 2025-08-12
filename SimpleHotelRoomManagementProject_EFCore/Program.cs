@@ -247,10 +247,19 @@ namespace SimpleHotelRoomManagementProject_EFCore
             if (result.Ok)
             {
 
+                // Mark room as reserved through room service (the service exposes an UpdateRoom(RoomId, bool isReserved) method)
+                _roomServices.UpdateRoom(room.RoomId, true);
 
-
-
-
+                Console.WriteLine($"Reservation successful. Booking ID: {result.BookingId}. Message: {result.Message}");
             }
+            else
+            {
+                Console.WriteLine($"Reservation failed: {result.Message}");
+            }
+        }
+
+
+
+    }
     }
 }
