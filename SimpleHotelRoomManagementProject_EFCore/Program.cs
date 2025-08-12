@@ -260,6 +260,8 @@ namespace SimpleHotelRoomManagementProject_EFCore
         }
 
         //4) View all reservations with total cost
+        // Prints each booking with Guest, RoomNumber, Nights and TotalCost.
+        /// If TotalCost was not set by service, compute using Room.DailyRate * Nights.
         private static void Menu_ViewAllBookingWithTotal()
         {
             Console.WriteLine("All reservations:");
