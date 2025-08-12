@@ -238,7 +238,8 @@ namespace SimpleHotelRoomManagementProject_EFCore
                 return;
             }
 
-
+            // Determine check-in date: using NOW as default (menu did not ask for date)
+            DateTime checkInDate = DateTime.Now;
 
 
 
