@@ -295,6 +295,38 @@ namespace SimpleHotelRoomManagementProject_EFCore
             Console.WriteLine("--------------------------------------------------------------------------");
         }
 
+        // 5) Search reservation by guest name (case-insensitive)
+        private static void Menu_SearchReservationByGuestName()
+        {
+            Console.Write("Enter guest name to search (case-insensitive): ");
+            string name = InputValidator.GetNonEmptyString();
+
+            var allBookings = _bookingRepo.GetAllBooking();
+
+            var matches = allBookings.Where(b =>
+            {
+                // Ensure Guest is present; compare case-insensitive
+                var guestName = b.Guest?.GuestName ?? string.Empty;
+                return guestName.IndexOf(name, StringComparison.OrdinalIgnoreCase) >= 0;
+            }).ToList();
+
+            if (matches.Count == 0)
+            {
+                Console.WriteLine("No reservations found for that guest.");
+                return;
+            }
+
+            Console.WriteLine("Matched reservations:");
+            foreach (var b in matches)
+            {
+                var full = _bookingRepo.GetBookingById(b.BookingId);
+                string guestName = full.Guest?.GuestName ?? "(unknown)";
+                int roomNumber = full.Room?.RoomNumber ?? full.roomId;
+                decimal total = full.TotalCost;
+                if (total == 0 && full.Room != null) total = full.Room.DailyRate * full.Nights;
+                Console.WriteLine($"Booking {full.BookingId} | Guest: {guestName} | Room: {roomNumber} | Nights: {full.Nights} | Total: {total:C}");
+            }
+        }
 
 
 
@@ -303,5 +335,5 @@ namespace SimpleHotelRoomManagementProject_EFCore
 
 
     }
-    }
+}
 }
