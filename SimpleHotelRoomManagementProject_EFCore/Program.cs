@@ -25,6 +25,7 @@ namespace SimpleHotelRoomManagementProject_EFCore
             var roomService = new RoomServices(roomRepo);
             var bookingService = new BookingServices(bookingRepo, guestRepo, roomRepo);
 
+            bool exit = false; // Flag to exit the program
 
 
 
