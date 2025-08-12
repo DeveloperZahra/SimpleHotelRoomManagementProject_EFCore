@@ -1,4 +1,5 @@
 ﻿using SimpleHotelRoomManagementProject_EFCore.Repositories;
+using SimpleHotelRoomManagementProject_EFCore.Services;
 
 namespace SimpleHotelRoomManagementProject_EFCore
 {
@@ -20,6 +21,9 @@ namespace SimpleHotelRoomManagementProject_EFCore
             var guestRepo = new GuestRepo(context);
             var reviewRepo = new ReviewRepo(context);
 
+            // Initialize services
+            var roomService = new RoomServices(roomRepo);
+            var bookingService = new BookingServices(bookingRepo, guestRepo, roomRepo);
 
 
 
