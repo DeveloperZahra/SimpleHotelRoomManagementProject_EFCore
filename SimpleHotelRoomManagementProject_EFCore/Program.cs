@@ -4,7 +4,10 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            // Welcome Message
+            Console.WriteLine("====================================");
+            Console.WriteLine(" Welcome to the Simple Hotel System ");
+            Console.WriteLine("====================================\n");
         }
     }
 }
