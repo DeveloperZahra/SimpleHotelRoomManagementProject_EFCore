@@ -49,7 +49,18 @@ namespace SimpleHotelRoomManagementProject_EFCore
                 // Process user's choice
                 switch (choice)
                 {
+                    case "1":
+                        // === Add Room ===
+                        Console.Write("Enter Room Number: ");
+                        int roomNumber = InputValidator.GetValidInt();
+                        Console.Write("Enter Room Type: ");
+                        string roomType = InputValidator.GetValidString();
+                        Console.Write("Enter Price per Night: ");
+                        decimal price = InputValidator.GetValidDecimal();
 
+                        roomService.AddRoom(roomNumber, roomType, price);
+                        Console.WriteLine("Room added successfully!");
+                        break;
 
 
 
