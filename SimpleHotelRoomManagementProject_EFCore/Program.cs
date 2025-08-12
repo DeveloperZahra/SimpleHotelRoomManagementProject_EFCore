@@ -258,7 +258,7 @@ namespace SimpleHotelRoomManagementProject_EFCore
             }
         }
 
-        //View all reservations with total cost
+        //4) View all reservations with total cost
         private static void Menu_ViewAllBookingWithTotal()
         {
             Console.WriteLine("All reservations:");
