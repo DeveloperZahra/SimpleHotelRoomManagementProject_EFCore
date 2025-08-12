@@ -169,6 +169,28 @@ namespace SimpleHotelRoomManagementProject_EFCore
         }
 
 
+        /// <summary>
+        /// 3) Reserve a room for a guest (Guest Name, Room Number, Nights)
+        /// Steps:
+        ///  - find guest by name (case-insensitive) or create new guest if not found
+        ///  - find room by RoomNumber and ensure it's not reserved
+        ///  - call BookingServices.AddNewBooking(...) which enforces booking logic in services layer
+        ///    (the project BookingServices signature: AddNewBooking(int nights, DateTime checkInDate, int guestId, int roomId))
+        ///  - if booking is successful, mark the room reserved via room services
+        /// </summary>
+
+        private static void Menu_ReserveRoomForGuest()
+        {
+            Console.WriteLine("Reserve a room for a guest:");
+
+            Console.Write(" - Guest Name: ");
+            string guestName = InputValidator.GetNonEmptyString();
+
+            Console.Write(" - Room Number: ");
+            int roomNumber = InputValidator.GetPositiveInt();
+
+            Console.Write(" - Nights: ");
+            int nights = InputValidator.GetPositiveInt();
 
 
 
@@ -184,6 +206,6 @@ namespace SimpleHotelRoomManagementProject_EFCore
 
 
 
+        }
     }
-}
 }
