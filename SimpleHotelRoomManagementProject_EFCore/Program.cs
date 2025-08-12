@@ -101,7 +101,7 @@ namespace SimpleHotelRoomManagementProject_EFCore
                         Menu_ViewAllBookingWithTotal();
                         break;
                     case "5":
-                        Menu_SearchReservationByGuestName();
+                        Menu_SearchBookingByGuestName();
                         break;
                     case "6":
                         Menu_FindHighestPayingGuest();
@@ -296,7 +296,7 @@ namespace SimpleHotelRoomManagementProject_EFCore
         }
 
         // 5) Search reservation by guest name (case-insensitive)
-        private static void Menu_SearchReservationByGuestName()
+        private static void Menu_SearchBookingByGuestName()
         {
             Console.Write("Enter guest name to search (case-insensitive): ");
             string name = InputValidator.GetNonEmptyString();
@@ -328,6 +328,51 @@ namespace SimpleHotelRoomManagementProject_EFCore
             }
         }
 
+        // 6) Find the highest-paying guest
+
+        private static void Menu_FindHighestPayingGuest()
+        {
+            var bookings = _bookingRepo.GetAllBooking();
+            if (bookings == null || bookings.Count == 0)
+            {
+                Console.WriteLine("No bookings available to analyze.");
+                return;
+            }
+
+            // Compute totals per guest
+            var totals = new Dictionary<int, decimal>(); // guestId -> total
+            var guestNames = new Dictionary<int, string>();
+
+            foreach (var b in bookings)
+            {
+                var full = _bookingRepo.GetBookingById(b.BookingId);
+                int guestId = full.Guest?.GuestId ?? 0;
+                string guestName = full.Guest?.GuestName ?? "(unknown)";
+
+                decimal total = full.TotalCost;
+                if (total == 0 && full.Room != null) total = full.Room.DailyRate * full.Nights;
+
+                if (!totals.ContainsKey(guestId))
+                {
+                    totals[guestId] = total;
+                    guestNames[guestId] = guestName;
+                }
+                else
+                {
+                    totals[guestId] += total;
+                }
+            }
+
+            // Find highest
+            var highest = totals.OrderByDescending(kv => kv.Value).FirstOrDefault();
+            if (highest.Key == 0 && highest.Value == 0)
+            {
+                Console.WriteLine("Could not determine highest-paying guest.");
+                return;
+            }
+
+            Console.WriteLine($"Highest-paying guest is: {guestNames[highest.Key]} (GuestId: {highest.Key}) with total payments: {highest.Value:C}");
+        }
 
 
 
