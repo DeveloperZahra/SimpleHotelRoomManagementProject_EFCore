@@ -38,7 +38,11 @@ namespace SimpleHotelRoomManagementProject_EFCore
             _bookingRepo = new BookingRepo(_context);
             _reviewRepo = new ReviewRepo(_context);
 
-
+            // Initialize service layer
+            _roomServices = new RoomServices(_roomRepo);
+            _guestServices = new GuestServices(_guestRepo);
+            _bookingServices = new BookingServices(_bookingRepo, _guestRepo, _roomRepo);
+            _reviewServices = new ReviewServices(_reviewRepo);
 
 
 
